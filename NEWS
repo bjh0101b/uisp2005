@@ -1,0 +1,40 @@
+Summary of changes in 20050207 release since 20040311 release:
+
+- Add parallel programmer support for tiny2313. Still need the stk500 codes.
+- Add support for AtMega88 and AtMega48
+- Add DASA3 cable support (-dprog=dasa3), ATDH1150VPC cable support 
+  (-dprog=atdh), Datamekatronik 2004 cable support (-dprog=dm04).
+- Improve error messages a little bit
+- Fix compatibility with g++-3.4
+
+Summary of changes in 20040311 release since 20030618 release:
+
+- Add DAPA support for at89s51 and at89s52 devices.
+- Rename avrisp programmer to paravrisp to avoid confusion with Atmel's AVRISP
+	pod. The AVRISP pod is really a subset of stk500 so -dprog=stk500
+	option should be used instead.
+- Update Jason Kyle's pavr firmware.
+- Allow selecting serial port from either -dlpt or -dserial for dasa and dasa2.
+- Stk500 support for mega64.
+- Converted build system to use autoconf-2.57 and automake-1.7.x.
+- Change -dparallel option to -dhiv to avoid confusion.
+- Add --rd_osc and --wr_osc options for Stk500.
+- Work around a bug in recent Linux kernels which causes a seq fault when
+	calling ioperm().
+
+Summary of changes in 20030618 release since last release:
+
+- Stk500 support for new devices (mega8, mega16, mega32, mega162, mega169,
+	at90s8534, mega8515, mega8535)
+- Some updates related to appnote avr061 (stk500 protocol doc).
+- Parallel programming with stk500.
+- Read/set ARef and Vtg voltages on stk500.
+- Add support for ETT parallel port programmer from Futurlec.
+- Fix handling of checksums in Intex hex input files.
+- Fixes to allowing compiling and running on Windows via cygwin.
+- Fix long standing bug in which programming a at90s1200 would hang, but 
+	then cycling the power would cause the program to run as if the
+	programming was successful. I have a suspicion that this is also
+	the real fix for Bug #784.
+
+Last Release 20021201

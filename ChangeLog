@@ -1,0 +1,195 @@
+2005-02-07 Margarita Manterola  <margamanterola@gmail.com>
+
+	Release version 20050207
+
+2005-02-07 Margarita Manterola  <margamanterola@gmail.com>
+
+	* NEWS:
+	* AUTHORS:
+	* INSTALL:
+	Update the docs for the upcoming release.
+
+2005-02-07 Margarita Manterola  <margamanterola@gmail.com>
+	
+	* configure.ac (AC_INIT): Bump version.
+
+	* src/Avr.C:
+	* src/Avrdummy.C:
+	Improve the error messages a little bit.
+
+2004-12-28  Margarita Manterola  <margamanterola@gmail.com>
+[Contributed by James Lamanna <jamesl@appliedminds.com>]
+
+	* configure.ac (AC_INIT): Bump version.
+
+	* src/Avr.C:
+	* src/Stk500.C:
+	Add support for AtMega48 and AtMega88.
+
+2004-11-16  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Juergen Weigert <jw@suse.de>]
+
+	* src/Main.C:
+	* src/MotIntl.C:
+	* src/MotIntl.h:
+	Enabled --hash for download, added --size for download.
+
+2004-11-16  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Walter Christian <wolti@sil.at>]
+
+	* configure.ac (AC_INIT): Bump version.
+	* src/DAPA.C: Include sys/types.h for FreeBSD-5.2.1.
+
+2004-10-20  Margarita Manterola <margamanterola@gmail.com>
+
+	* configure.ac (AC_INIT): Bump version.
+
+	* uisp.1.in:
+	* NEWS:
+	* src/DAPA.C:
+	* src/Main.C:
+	Fix Datamekatornik -> Datamekatronic typo.
+
+2004-10-14  Margarita Manterola <margamanterola@gmail.com>
+
+	* TODO: Remove ATDH and AT89S items, since both are done now.
+	* NEWS: Add item about the new cables supported (ATDH, DM04 and DASA3).
+
+2004-10-14  Margarita Manterola <margamanterola@gmail.com>
+
+	* configure.ac (AC_INIT): Bump version.
+
+	* uisp.1.in:
+	* src/DAPA.C:
+	* src/DAPA.h:
+	* src/Main.C:
+	Add DM04 programmer; SCK=!SEL MOSI=INIT MISO=PAPEROUT R_IN=ACK, 
+	__no reset bit__ the reset button has to be manually pressed.
+
+2004-10-11  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Margarita Manterola <margamanterola@gmail.com>]
+
+	* configure.ac (AC_INIT): Bump version.
+
+	* src/Global.h: Include stddef.h so that NULL is always defined, making
+	the code g++-3.4 compatible.
+
+2004-10-06  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Margarita Manterola <margamanterola@gmail.com>]
+
+	* configure.ac (AC_INIT): Bump version.
+
+	* uisp.1.in:
+	* src/DAPA.h:
+	* src/Main.C:
+	Add ATDH programmer; RESET=!SEL SCK=!STROBE MOSI=D0 MISO=ACK.
+
+	* src/DAPA.C:
+	Add ATDH programmer. Add verbose levels 4 and 5 for cable debugging.
+	Make -dinvert invert the current reset level, instead of switching to 1.
+	Add comments about all "low active" pins, so that it is clear why the
+	inverted values are used.
+
+2004-05-20  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Dean Ferreyra <dferreyra@igc.org>]
+
+	* configure.ac (AC_INIT): Bump version.
+
+	* src/Stk500.C:
+	* src/Stk500.h:
+	Don't program unprogrammed low addresses. Speeds up boot-loader
+	uploading considerably. [patch #2863]
+
+2004-05-11  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Jean Schurger <j.schurger@utram.com>]
+
+	* uisp.1.in:
+	* src/DAPA.C:
+	* src/DAPA.h:
+	* src/Main.C:
+	Add DASA3 programmer; RESET=!DTR SCK=RTS MOSI=TXD MISO=CTS.
+
+2004-05-11  Theodore A. Roth  <troth@openavr.org>
+
+	* configure.ac (AC_INIT): Bump version.
+	* Makefile.am (EXTRA_DIST): Add doc/README.rs232 file.
+	* doc/README.rs232: New file.
+
+2004-03-30  Theodore A. Roth  <troth@openavr.org>
+
+	* configure.ac (AC_INIT): Bump version.
+	* NEWS: Add note about tiny2313.
+
+	* src/Avr.C:
+	* src/Avr.h:
+	Add support for tiny2313. Still need more info to get stk500 working.
+	This partially fixes [Bug #8012].
+
+2004-03-11  Theodore A. Roth  <troth@openavr.org>
+
+	Release version 20040311.
+
+2004-02-07  Theodore A. Roth  <troth@openavr.org>
+
+	* configure.ac (AC_INIT): Set version to 20040311.
+	* NEWS: Updated.
+
+2004-02-07  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Wojtek Kaniewski <wojtekka@toxygen.net>]
+
+	* src/AvrDummy.C (TAvrDummy::ChipErase): Enforce minimum 500ms delay
+	when erasing at89 devices.
+
+2004-02-07  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Terran Melconian <terran@consistent.org>]
+
+	* src/Stk500.C (TStk500::TStk500): Fix a logical bug when calculating
+	the oscillator byte to be sent to the stk500 to change osc freq.
+
+2004-02-07  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Wojtek Kaniewski <wojtekka@toxygen.net>]
+
+	* uisp.1.in:
+	* src/Avr.C:
+	* src/Avr.h:
+	* src/AvrDummy.C:
+	* src/DAPA.C:
+	* src/DAPA.h:
+	* src/Main.C:
+	Add DAPA support for at89s51 and at89s52 deivces.
+
+2004-02-07  Theodore A. Roth  <troth@openavr.org>
+[Contributed by Terran Melconian <terran@consistent.org>]
+
+	* configure.ac (AC_INIT): Set version to 20040207cvs.
+	* src/Stk500.C (TStk500::ReadLockBits): Use correct command byte.
+
+2004-01-26  Theodore A. Roth  <troth@openavr.org>
+
+	* configure.ac (AC_INIT): Set version to 20040126cvs.
+	* src/DAPA.C, src/DAPA.h: Change PAT_AVRISP to PAT_PARAVRISP.
+	* src/Main.C, src/Serial.C: Change avrisp to be an alias for stk500.
+	Rename avrisp parallel programmer to paravrisp to avoid confussion with
+	Atmel's AVRISP serial programmer.
+
+2004-01-19  Theodore A. Roth  <troth@openavr.org>
+
+	* configure.ac (AC_INIT): Set version to 20040119cvs.
+	Update copyright year.
+	* ChangeLog-2002, ChangeLog-2002, ChangeLog: Cycle the ChangeLog.
+	* Makefile.ac: Update copyright year.
+	(EXTRA_DIST): Add ChangeLog-2002 and ChangeLog-2003 files.
+	(install_aux_files): Ditto.
+	* bootstrap: Remove any autom4te.cache directory left over from a
+	previous run of bootstrap.
+
+2004-01-18  Theodore A. Roth  <troth@openavr.org>
+
+	* pavr/pavr.c (send_prog_str): Use pgm_read_byte() install of
+	__lpm_inline() macro.
+
+2004-01-18  Theodore A. Roth  <troth@openavr.org>
+
+	* pavr/Makefile, pavr/pavr.c: Sync up with Jason Kyle's source at
+	www.avr1.org.
+

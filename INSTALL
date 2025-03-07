@@ -1,0 +1,23 @@
+
+Micro In-System Programmer Brief Installation Notes
+
+Enter the src directory.
+
+If uisp does not compile successfully, add switch -DNO_DIRECT_IO in the
+Makefile to remove support for direct I/O port access (that may be
+necessary on non-PC architectures).  Parallel port access should still
+work if you have the Linux ppdev driver (patch for 2.2.17 is in the
+kernel directory, ppdev is standard in 2.4 kernels).  Please lobby
+Alan Cox to include this tiny little driver in 2.2.x too :).
+
+To make it type:
+
+	make
+
+and to install it:
+
+	make install
+
+If you have any further doubts, please consult UISP's homepage:
+http://www.nongnu.org/uisp/
+
